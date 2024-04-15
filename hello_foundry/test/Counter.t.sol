@@ -21,4 +21,12 @@ contract CounterTest is Test {
         counter.setNumber(x);
         assertEq(counter.number(), x);
     }
+
+    function test_IsNativeToken() public view {
+        assertEq(counter.isNativeToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE), true);
+    }
+
+    function test_IsNativeTokenLinked() public view {
+        assertEq(counter.isNativeTokenLinked(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE), true);
+    }
 }
